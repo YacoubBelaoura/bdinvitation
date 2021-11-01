@@ -2,137 +2,428 @@
 <html lang="en">
 
 <head>
-	<title>THE BIG DAY</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/countdowntime/flipclock.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<!--===============================================================================================-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>YACHA | Invitation</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/pe-icons.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- <link href="css/main.css" rel="stylesheet"> -->
+    <script src="js/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/fullpage.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="css/examples.css" /> -->
+    <!--google font-->
+    <link href='https://fonts.googleapis.com/css?family=Rakkas' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Rakkas';
+            font-size: 35px;
+        }
+
+        h2 {
+            font-family: 'Rakkas';
+            font-size: 40px;
+        }
+    </style>
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+
+    <!-- <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            'use strict';
+        // jQuery('.overlay1').backstretch([
+        jQuery('body').backstretch([
+                "images/bg/bg01.jpg",
+                "images/bg/bg2.jpg",
+                "images/bg/bg3.jpg"
+            ], {
+                duration: 5000,
+                fade: 500,
+                centeredY: true
+            });
+
+            $("#mapwrapper").gMap({
+                controls: false,
+                scrollwheel: false,
+                markers: [{
+                    latitude: 40.7566,
+                    longitude: -73.9863,
+                    icon: {
+                        image: "images/marker.png",
+                        iconsize: [44, 44],
+                        iconanchor: [12, 46],
+                        infowindowanchor: [12, 0]
+                    }
+                }],
+                icon: {
+                    image: "images/marker.png",
+                    iconsize: [26, 46],
+                    iconanchor: [12, 46],
+                    infowindowanchor: [12, 0]
+                },
+                latitude: 40.7566,
+                longitude: -73.9863,
+                zoom: 14
+            });
+        });
+    </script> -->
+    <style>
+        /* Style for our header texts
+	* --------------------------------------- */
+        /* h1 {
+            font-size: 5em;
+            font-family: arial, helvetica;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        } */
+
+        /* Centered texts in each section
+	* --------------------------------------- */
+        .section {
+            text-align: center;
+            overflow: hidden;
+        }
+
+        #myVideo {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            width: 130%;
+            height: 100%;
+            background-size: 100% 100%;
+            background-color: black;
+            /* in case the video doesn't fit the whole page*/
+            background-image:
+                /* our video */
+            ;
+            background-position: center center;
+            background-size: contain;
+            object-fit: cover;
+            /*cover video background */
+            z-index: 3;
+        }
+
+
+
+        /* Layer with position absolute in order to have it over the video
+	* --------------------------------------- */
+        #section0 .layer {
+            position: absolute;
+            z-index: 4;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            /* top: 43%; */
+            top: 0;
+
+            /*
+		* Preventing flicker on some browsers
+		* See http://stackoverflow.com/a/36671466/1081396  or issue #183
+		*/
+            -webkit-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        /*solves problem with overflowing video in Mac with Chrome */
+        #section0 {
+            overflow: hidden;
+        }
+
+
+        /* Bottom menu
+	* --------------------------------------- */
+        #infoMenu li a {
+            color: #fff;
+        }
+
+
+        /* Hiding video controls
+	* See: https://css-tricks.com/custom-controls-in-html5-video-full-screen/
+	* --------------------------------------- */
+        video::-webkit-media-controls {
+            display: none !important;
+        }
+    </style>
+    <style>
+        /*---------------------------------------------*/
+        .outer {
+            transform-style: preserve-3d;
+            /* transform: perspective(1000px); */
+        }
+
+        .overlay1 {
+            position: relative;
+            z-index: 1;
+        }
+
+        .overlay1::before {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: #7579ff;
+            background: -webkit-linear-gradient(top, #b224ef, #7579ff);
+            background: -o-linear-gradient(top, #b224ef, #7579ff);
+            background: -moz-linear-gradient(top, #b224ef, #7579ff);
+            background: linear-gradient(top, #b224ef, #7579ff);
+            opacity: 0.8;
+        }
+
+        /*---------------------------------------------*/
+
+        .inner {
+            transform: translateZ(40px);
+        }
+
+        .simply-countdown {
+            /* The countdown */
+            margin-bottom: 2em;
+        }
+
+        .simply-countdown>.simply-section {
+            /* coutndown blocks */
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            background: rgba(241, 78, 149, 0.8);
+            margin: 0 4px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            border-radius: 40%;
+            position: relative;
+            animation: pulse 1s ease infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .simply-countdown>.simply-section>div {
+            /* countdown block inner div */
+            display: table-cell;
+            vertical-align: middle;
+            height: 200px;
+            width: 200px;
+        }
+
+        .simply-countdown>.simply-section .simply-amount,
+        .simply-countdown>.simply-section .simply-word {
+            display: block;
+            color: white;
+            /* amounts and words */
+        }
+
+        .simply-countdown>.simply-section .simply-amount {
+            font-size: 50px;
+            /* amounts */
+        }
+
+        .simply-countdown>.simply-section .simply-word {
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            font-size: 30px;
+            /* words */
+        }
+    </style>
 </head>
+<!--/head-->
 
 <body>
+    <div id="preloader"></div>
+    <header class="navbar navbar-fixed-top " role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- <a class="navbar-brand " href="#">
+                    <img alt="Brand" src="images/ico/favicon.ico" width="40" height="40">
+                </a> -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="fa fa-bars"></i>
+                </button>
+
+                <a class="navbar-brand" href="index.html">
+                    <h1><span class="pe-7s-gleam bounce-in"></span> YACHA</h1>
+                </a>
+            </div>
+            <div class="navbar-btn navbar-right">
+                
+                <a href="#p01" type="button" class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                </a >
+                <a href="#p02" type="button" class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                </a>
+                <a href="#p03" type="button" class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+                </a >
+            </div>
+        </div>
+    </header>
+    <!--/header-->
+
+    <ul id="menu">
+    </ul>
+    <div id="fullpage">
+        <div class="section overlay1" id="section0">
+            <video id="myVideo" loop muted data-autoplay>
+                <source src="video/flowers.mp4" type="video/mp4">
+                <source src="video/flowers.webm" type="video/webm">
+            </video>
+            <div id="main-slider" class="layer no-margin overlay1">
+                <div class="carousel " data-ride="carousel " data-tilt data-tilt-scale="1.1"
+                    data-tilt-perspective="1500" data-tilt-max="5">
+                    <div class="carousel-inner outer ">
+                        <div class="item active">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="carousel-content center centered">
+                                            <div class="wrappic1 inner">
+                                                <a href="#">
+                                                    <img src="images/icons/logo.png" width="100" height="100" alt="IMG">
+                                                </a>
+                                            </div>
+                                            <h2 class="boxed animation animated-item-1 fade-down inner">انتم مدعوون
+                                            </h2>
+                                            <p class="boxed animation animated-item-2 fade-up inner">
+                                                إلى من يملكون معزة خاصة في قلوبنا. لم نجد أفضل منكم لمشاركتنا فرحتنا
+                                                بهذا اليوم نحن بإنتظاركم بكل حب بحظوركم تعمر فرحتنا
+                                            </p>
+                                            <br>
+                                            <br>
+                                            <div class="simply-countdown simply-countdown-one"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <h1>fullPage.js videos</h1> -->
+            </div>
+
+        </div>
+        <div class="section ">Some section</div>
+        <div class="section">Some section</div>
+    </div>
 
 
-	<div class="bg-img1 size1 overlay1 p-b-35 p-l-15 p-r-15" style="background-image: url('images/bg01.jpg');">
-		<div class="flex-col-c p-t-160 p-b-215 respon1">
-			<div class="wrappic1">
-				<a href="#">
-					<img src="images/icons/logo.png" width="100" height="100" alt="IMG">
-				</a>
-			</div>
-
-			<h3 class="l1-txt1 txt-center p-t-30 p-b-100">
-				THE BIG DAY
-			</h3>
-
-			<div class="cd100"></div>
-
-		</div>
-
-		<!--  -->
-		<div class="flex-w flex-c-m p-b-35">
-			<a href="#"
-				onclick="Share.facebook('https://yacoubbelaoura.github.io/countdown','THE BIG DAY','https://yacoubbelaoura.github.io/countdown/images/bg01.jpg','wedding date for')"
-				class="size3 flex-c-m how-social trans-04 m-r-3 m-l-3 m-b-5">
-				<i class="fa fa-facebook"></i>
-			</a>
-
-			<a href="#"
-				onclick="Share.twitter('https://yacoubbelaoura.github.io/countdown','THE BIG DAY')"
-				class="size3 flex-c-m how-social trans-04 m-r-3 m-l-3 m-b-5">
-				<i class="fa fa-twitter"></i>
-			</a>
-
-			<!-- <a href="#" class="size3 flex-c-m how-social trans-04 m-r-3 m-l-3 m-b-5">
-				<i class="fa fa-youtube-play"></i>
-			</a> -->
-		</div>
-	</div>
 
 
 
+    <script src="js/plugins.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWDPCiH080dNCTYC-uprmLOn2mt2BMSUk&amp;sensor=true">
+    </script>
+    <script src="js/init.js"></script>
+    <!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script> -->
+    <script src="js/simplyCountdown.js"></script>
 
+    <script>
+        // var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
+        var d = new Date(2021, 11, 26);
 
-	<!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/countdowntime/flipclock.min.js"></script>
-	<script src="vendor/countdowntime/moment.min.js"></script>
-	<script src="vendor/countdowntime/moment-timezone.min.js"></script>
-	<script src="vendor/countdowntime/moment-timezone-with-data.min.js"></script>
-	<script src="vendor/countdowntime/countdowntime.js"></script>
-	<script>
-		var duration = moment.duration(moment([2021, 11, 26]).diff(moment()));
+        // default example
+        simplyCountdown('.simply-countdown-one', {
+            // year: 2021,
+            // month:  12,
+            // day: 26
+            year: d.getFullYear(),
+            month: d.getMonth() + 1,
+            day: d.getDate(),
+            enableUtc: false
+        });
 
-		console.log(duration);
-		console.log(duration.days());
-		console.log(duration.hours());
-		console.log(duration.minutes());
-
-		$('.cd100').countdown100({
-			/*Set Endtime here*/
-			/*Endtime must be > current time*/
-			endtimeYear: 0,
-			endtimeMonth: 0,
-			endtimeDate: duration.asDays(),
-			endtimeHours: duration.hours(),
-			endtimeMinutes: duration.minutes(),
-			endtimeSeconds: duration.seconds(),
-			timeZone: ""
-			// ex:  timeZone: "America/New_York"
-			//go to " http://momentjs.com/timezone/ " to get timezone
-		});
-	</script>
-	<script>
-		Share = {
-			facebook: function (purl, ptitle, pimg, text) {
-				url = 'http://www.facebook.com/sharer.php?s=100';
-				url += '&p[title]=' + encodeURIComponent(ptitle);
-				url += '&p[summary]=' + encodeURIComponent(text);
-				url += '&p[url]=' + encodeURIComponent(purl);
-				url += '&p[images][0]=' + encodeURIComponent(pimg);
-				Share.popup(url);
-			},
-			twitter: function (purl, ptitle) {
-				url = 'http://twitter.com/share?';
-				url += 'text=' + encodeURIComponent(ptitle);
-				url += '&url=' + encodeURIComponent(purl);
-				url += '&counturl=' + encodeURIComponent(purl);
-				Share.popup(url);
-			},
-			popup: function (url) {
-				window.open(url, '', 'toolbar=0,status=0,width=626, height=436');
-			}
-		};
-	</script>
-	<!--===============================================================================================-->
-	<script src="vendor/tilt/tilt.jquery.min.js"></script>
-	<script>
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
-	</script>
-	<!--===============================================================================================-->
-	<script src="js/main.js"></script>
-
+        //jQuery example
+        // $('#simply-countdown-losange').simplyCountdown({
+        //     year: d.getFullYear(),
+        //     month: d.getMonth() + 1,
+        //     day: d.getDate(),
+        //     enableUtc: false
+        // });
+    </script>
+    <script type="text/javascript" src="js/vanilla-tilt.min.js"></script>
+    <script type="text/javascript" src="js/fullpage.min.js"></script>
+    <script type="text/javascript" src="js/fullpage.extensions.min.js"></script>
+    <script type="text/javascript" src="js/examples.js"></script>
+    <script type="text/javascript">
+        var myFullpage = new fullpage('#fullpage', {
+            //Navigation
+            menu: '#menu',
+            lockAnchors: false,
+            anchors: ['p01', 'p02', 'p03'],
+            navigation: true,
+            verticalCentered: true,
+            sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE'],
+            navigationPosition: 'right',
+            navigationTooltips: ['المدخل', 'الاحداث', 'المكان'],
+            showActiveTooltip: true,
+            slidesNavigation: false,
+            slidesNavPosition: 'right',
+            //Design
+            controlArrows: true,
+            verticalCentered: true,
+            // sectionsColor: ['#ccc', '#fff'],
+            // paddingTop: '3em',
+            // paddingBottom: '10px',
+            // fixedElements: '#header, .footer',
+            // responsiveWidth: 0,
+            // responsiveHeight: 0,
+            // responsiveSlides: false,
+            parallax: true,
+            parallaxOptions: {
+                type: 'reveal',
+                percentage: 62,
+                property: 'translate'
+            },
+            dropEffect: false,
+            dropEffectOptions: {
+                speed: 2300,
+                color: '#F82F4D',
+                zIndex: 9999
+            },
+            waterEffect: false,
+            waterEffectOptions: {
+                animateContent: true,
+                animateOnMouseMove: true
+            },
+            cards: false,
+            cardsOptions: {
+                perspective: 100,
+                fadeContent: true,
+                fadeBackground: true
+            },
+        });
+    </script>
 </body>
 
 </html>
